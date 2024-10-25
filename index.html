@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Homepage</title>
+    <link rel="stylesheet" href="Web.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
+    <style>
+ 
+    </style>
+</head>
+
+<body onload="initLoadingPage()">
+    
+
+    <div class="loading-page" id="loading-page">
+        <svg id="svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+            <path d="M192 32c0 17.7 14.3 32 32 32c123.7 0 224 100.3 224 224c0 17.7 14.3 32 32 32s32-14.3 32-32C512 128.9 383.1 0 224 0c-17.7 0-32 14.3-32 32zm0 96c0 17.7 14.3 32 32 32c70.7 0 128 57.3 128 128c0 17.7 14.3 32 32 32s32-14.3 32-32c0-106-86-192-192-192c-17.7 0-32 14.3-32 32zM96 144c0-26.5-21.5-48-48-48S0 117.5 0 144L0 368c0 79.5 64.5 144 144 144s144-64.5 144-144s-64.5-144-144-144l-16 0 0 96 16 0c26.5 0 48 21.5 48 48s-21.5 48-48 48s-48-21.5-48-48l0-224z"/>
+        </svg>
+        <div class="name-container">
+            <div class="logo-name">Blenditech - Blog</div>
+        </div>
+    </div>
+
+    <section class="header">
+        <nav>
+            <a href="index.html"><img src="components/bl.png"></a>
+            <div class="nav-links" id="navLinks">
+                <i class="fa fa-times" onclick="hideMenu()"></i>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">Articles Page</a></li>
+                    <li><a href="course.html">About Us Page</a></li>
+                </ul>
+            </div>
+            <i class="fa fa-bars" onclick="showMenu()"></i>
+        </nav>
+
+        <div class="text-box">
+            <h1>Technology</h1>
+            <p>News Blog</p>
+            <a href="about.html" class="hero-btn" id="visit-button">Visit Us To know More</a>
+        </div>
+    </section>
+
+    <section id="blog">
+        <div class="blog-heading">
+            <span>Technology News</span>
+            <h3>Latest Posts!</h3>
+        </div>
+
+        <div class="blog-container">
+            <div class="blog-box">
+                <div class="blog-img">
+                    <img src="components/article1.webp" alt="Blog">
+                </div>
+                <div class="blog-text">
+                    <span>15 October / News - 2024</span>
+                    <a href="" class="blog-title">Elon Musk's Tesla Cybercab is a hollow promise of a robotaxi future</a>
+                    <p>Autonomous taxis are already operating on US streets, while Elon Musk has spent years promising a self-driving car and failing to deliver.</p>
+                    <a href="https://www.newscientist.com/article/2451547-elon-musks-tesla-cybercab-is-a-hollow-promise-of-a-robotaxi-future/">Read More</a>
+                </div>
+            </div>
+
+            <div class="blog-box">
+                <div class="blog-img">
+                    <img src="components/SEI_225702187.webp" alt="Blog">
+                </div>
+                <div class="blog-text">
+                    <span>16 October / News - 2024</span>
+                    <a href="#" class="blog-title">I've been boosting my ego with a sycophant AI and it can't be healthy</a>
+                    <p>Google’s NotebookLM tool is billed as an AI-powered research assistant and can even turn your text history into a jovial fake podcast.</p>
+                    <a href="https://www.newscientist.com/article/2452746-ive-been-boosting-my-ego-with-a-sycophant-ai-and-it-cant-be-healthy/">Read More</a>
+                </div>
+            </div>
+
+            <div class="blog-box">
+                <div class="blog-img">
+                    <img src="components/SEI_226051170.webp" alt="Blog">
+                </div>
+                <div class="blog-text">
+                    <span>17 October / News - 2024</span>
+                    <a href="" class="blog-title">Human scientists are still better than AI ones – for now</a>
+                    <p>A simulator for the process of scientific discovery shows that AI models still fall short of human scientists and engineers in coming up with hypotheses and carrying out experiments on their own.</p>
+                    <a href="https://www.newscientist.com/article/2451863-human-scientists-are-still-better-than-ai-ones-for-now/">Read More</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="footer">
+        <div class="icons">
+            <i class="fa fa-facebook"></i>
+            <i class="fa fa-twitter"></i>
+            <i class="fa fa-instagram"></i>
+            <i class="fa fa-linkedin"></i>
+        </div>
+    </section>
+
+    <script>
+        var navLinks = document.getElementById("navLinks");
+
+        function showMenu() {
+            navLinks.style.right = "0";
+        }
+
+        function hideMenu() {
+            navLinks.style.right = "-200px";
+        }
+
+        function initLoadingPage() {
+            // Simulate a loading delay (e.g., 3 seconds)
+            setTimeout(function() {
+                document.getElementById('loading-page').style.display = 'none'; // Hide loading page
+                
+                // Scroll down to the section containing the button
+                const headerSection = document.querySelector('.header');
+                const sectionPosition = headerSection.getBoundingClientRect().top + window.scrollY;
+                
+                window.scrollTo({
+                    top: sectionPosition, // Scroll to the section position
+                    behavior: 'smooth' // Smooth scroll
+                });
+            }, 3000); // Change this duration as needed
+        }
+    </script>
+</body>
+</html>
